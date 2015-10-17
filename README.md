@@ -44,11 +44,15 @@ source ./devel/setup.bash
 ```
 roslaunch youbot_gazebo_robot youbot.launch 
 ```
-4)Start Moveit! commander
+4)Start Moveit!
+```
+roslaunch youbot_moveit move_group.launch
+```
+5)Start Moveit! commander
 ```
 rosrun moveit_commander moveit_commander_cmdline.py
 ```
-5)The following code may be used to move the arm into the candle position
+6)The following code may be used to move the arm into the candle position
 ```
 > use arm_1
 arm_1> go candle
