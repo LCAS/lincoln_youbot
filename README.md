@@ -93,3 +93,12 @@ if __name__ == '__main__':
 		pass
 			
 ```
+#Running the demo program
+1) Get files from project repo
+```
+sudo git clone https://github.com/LCAS/lincoln_youbot.git
+```
+2) Open and new terminal, and execute the demo bash file
+```
+bash lincoln_youbot/Demo/Demo.sh
+```
