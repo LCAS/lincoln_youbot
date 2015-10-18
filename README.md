@@ -95,6 +95,7 @@ if __name__ == '__main__':
 ```
 #Running the demo program
 This demo program will launch terminal windows for the gazebo simulation, and moveit/moveit commander.
+
 1) Get files from project repo
 ```
 sudo git clone https://github.com/LCAS/lincoln_youbot.git
