@@ -64,9 +64,8 @@
 
 <!-- microsoft lifecam -->
   <xacro:microsoft_lifecam name="lifecam" parent="arm_link_5">
-    <!--<origin xyz="0.0 0 -0.03" rpy="0 1.5707963268 0"/>-->
-    <origin xyz="-0.09 0.0 -0.02" rpy="0 -1.5707963268 0"/>
+    <origin xyz="-0.088 0.0 -0.02" rpy="0 -2.97 0"/>
   </xacro:microsoft_lifecam>
 
-  
+ 
 </robot>

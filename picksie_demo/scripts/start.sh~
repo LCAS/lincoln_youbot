@@ -22,7 +22,10 @@ tmux send-keys "rosrun moveit_commander moveit_commander_cmdline.py"
 tmux select-pane -t 0
 
 tmux select-window -t $SESSION:1
-
+tmux split-window -v
+tmux select-pane -t 0
+tmux send-keys "roslaunch youbot_moveit move_group.launch"
+tmux select-pane -t 1
 tmux send-keys "rosrun rviz rviz"
 
 # Set default window
