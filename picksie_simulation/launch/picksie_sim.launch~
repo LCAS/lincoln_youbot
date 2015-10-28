@@ -8,8 +8,7 @@
   <arg name="init_pos_z" default="0.0"/>
 
   <!-- launch world -->
-  <!--<include file="$(find youbot_gazebo_worlds)/launch/$(arg world).launch" />-->
-      <include file="$(find picksie_simulation)/resources/worlds/launch/$(arg world).launch" />
+  <include file="$(find youbot_gazebo_worlds)/launch/$(arg world).launch" />
 
   <param name="robot_description" command="$(find xacro)/xacro.py $(find picksie_simulation)/resources/robots/youbot.urdf.xacro" />
   

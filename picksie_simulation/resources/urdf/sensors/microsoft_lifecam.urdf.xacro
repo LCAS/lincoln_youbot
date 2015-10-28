@@ -27,16 +27,16 @@
     <visual>
       <origin xyz="-0.04 -0.0035 -0.031" rpy="${M_PI/2} 0 ${M_PI/2}" />
       <geometry>
-       <mesh filename="package://youbot_description/meshes/sensors/microsoft_lifecam.dae" scale="0.001 0.001 0.001"/>
+       <mesh filename="package://picksie_simulation/resources/meshes/sensors/microsoft_lifecam_02.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
 
-    <collision>
+    <!--<collision>
       <origin xyz="-0.04 -0.0035 -0.031" rpy="${M_PI/2} 0 ${M_PI/2}" />
       <geometry>
         <mesh filename="package://youbot_description/meshes/sensors/microsoft_lifecam.dae" scale="0.001 0.001 0.001"/>
       </geometry>
-    </collision>
+    </collision>-->
   </link>
   
   <!-- for simulation -->
