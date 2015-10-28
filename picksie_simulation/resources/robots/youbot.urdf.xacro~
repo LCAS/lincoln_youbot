@@ -21,12 +21,15 @@
 
   <!-- youbot gripper -->
   <xacro:include filename="$(find youbot_description)/urdf/youbot_gripper/gripper.urdf.xacro" />
+
+  
  
   <!-- controller manager -->
   <xacro:include filename="$(find youbot_description)/controller/ros_controller.urdf.xacro" />
   
   <!-- materials for visualization -->
   <xacro:include filename="$(find youbot_description)/urdf/materials.urdf.xacro" />
+
 
   <!-- sensors -->
   <xacro:include filename="$(find picksie_simulation)/resources/urdf/sensors/hokuyo_urg04_laser.urdf.xacro"/>
@@ -57,6 +60,10 @@
     <origin xyz="0 0 0" rpy="0 0 0" />
   </xacro:youbot_gripper>
 
+  <xacro:cube01 name="cube">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:cube01>
+
   <!-- base laser front -->
   <xacro:hokuyo_urg04_laser name="base_laser_front" parent="base" ros_topic="base_scan" update_rate="10" min_angle="-1.57" max_angle="1.57">
     <origin xyz="0.3 0 -0.03" rpy="0 0 0"/>
@@ -64,7 +71,7 @@
 
 <!-- microsoft lifecam -->
   <xacro:microsoft_lifecam name="lifecam" parent="arm_link_5">
-    <origin xyz="-0.078 0.0 0.03" rpy="0 -1.56 0"/>
+    <origin xyz="-0.077 0.0 0.03" rpy="0 -1.56 0"/>
   </xacro:microsoft_lifecam>
 
  
