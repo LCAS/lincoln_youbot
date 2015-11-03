@@ -31,7 +31,7 @@ tmux select-pane -t 0
 tmux send-keys "ROS_NAMESPACE=usb_cam rosrun image_proc image_proc"
 
 tmux select-pane -t 1
-tmux send-keys "rosrun whycon whycon _targets:=1 /camera/image_rect_color:=/usb_cam/image_color"
+tmux send-keys "rosrun whycon whycon _targets:=1 _outer_diameter:=0.049 _target_frame:=/camera_frame /camera/image_rect_color:=/usb_cam/image_color"
 tmux select-pane -t 0
 
 
