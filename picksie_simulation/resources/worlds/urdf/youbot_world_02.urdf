@@ -3,30 +3,87 @@
 
   <link name="box1">
     <inertial>
-      <origin xyz="0 0 0.025" /> 
+      <origin xyz="0 0 0" /> 
       <mass value="1.0" />
       <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="1.0"  iyz="0.0"  izz="1.0" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0.025" rpy="0 0 0"/>
+      <origin xyz="-0.005 0 0" rpy="0 0 0"/>
       <geometry>
         <!--<box size="0.05 0.05 0.05" />-->
-	<mesh filename="package://picksie_simulation/resources/meshes/custom/cube.dae" />
+	<mesh filename="package://picksie_simulation/resources/meshes/custom/cube02.dae" />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 0 0.025" rpy="0 0 0"/>
+      <origin xyz="-0.005 0 0" rpy="0 0 0"/>
       <geometry>
         <!--<box size="0.05 0.05 0.05" />-->
-	<mesh filename="package://picksie_simulation/resources/meshes/custom/cube.dae" />
+	<mesh filename="package://picksie_simulation/resources/meshes/custom/cube02.dae" />
       </geometry>
     </collision>
   </link>
 
+  <link name="stick">
+    <inertial>
+      <origin xyz="0 0 0.015" /> 
+      <mass value="1.0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="1.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.015" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.4" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.015" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.4" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="base">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value="1.0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="1.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.02" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.02" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="join1" type="fixed">
+    <origin xyz="0 0 0.2" rpy="0 0 0"/>
+    <parent link="stick"/>
+    <child link="box1"/>
+  </joint>
+
+  <joint name="join2" type="fixed">
+    <origin xyz="0 0 -0.2" rpy="0 0 0"/>
+    <parent link="stick"/>
+    <child link="base"/>
+  </joint>
+
 
   <gazebo reference="box1">
-    
-    <selfCollide>true</selfCollide>
+      <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="stick">
+      <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="base">
+      <selfCollide>true</selfCollide>
   </gazebo>
  
 
