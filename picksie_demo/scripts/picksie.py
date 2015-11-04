@@ -100,12 +100,12 @@ class Youbot:
         self.Move()
     def Target_Pose(self,x,y,z,qx,qy,qz,qw):
         print "Moving to cartesian target"
-	#print current youbot pose
-	print self.group.get_current_pose()
-	#clear the previous target, if it exists
-	self.group.clear_pose_targets()
+        #print current youbot pose
+        print self.group.get_current_pose()
+        #clear the previous target, if it exists
+        self.group.clear_pose_targets()
         self.group.set_pose_target([x,y,z,qx,qy,qz,qw])
-	self.Move()
+        self.Move()
 	
     def Target_JS(self,j):
         print "Moving to joint space goal"

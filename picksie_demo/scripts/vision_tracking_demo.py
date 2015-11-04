@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from simulation import *
+from picksie import *
 
 def Init():
     print "*******************************"
