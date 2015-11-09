@@ -15,9 +15,14 @@ class Teleop(object):
         rospy.init_node('picksie_teleop')
         self._joints=[]
         self.joint_names=['arm_joint_1', 'arm_joint_2', 'arm_joint_3', 'arm_joint_4', 'arm_joint_5']#, 'gripper_finger_joint_l', 'gripper_finger_joint_r']
-        self.def_pos=[3.14,0.058,-0.4834,0.0222,2.88, 0.5, 0.5]
-        self.drop_pos= [5.84, 0.49, -1.0, 0.083, 2.88]
+        #self.def_pos=[3.14,0.058,-0.4834,2.4,2.88, 0.5, 0.5]
         
+        self.def_pos=[3.0, 2.61, -0.91, 0.25, 2.88, 0.0115, 0.0]
+#{'name': 'gripper_finger_joint_r', 'pos': 0.0115}
+#        self.drop_pos= [5.84, 0.49, -1.0, 0.083, 2.88]
+        self.drop_pos= [3.0, 0.011, -2.25, 0.25, 0.111, 0.0]
+#{'name': 'gripper_finger_joint_r', 'pos': 0.0}
+
         self._xymode=False
         self.turbo = 1
         self.arm_disabled=True
@@ -62,10 +67,11 @@ class Teleop(object):
             j_cmd.unit = 'rad'
             j_cmd.value = self.def_pos[i]
             arm_cmd.positions.append(j_cmd)
-            #print arm_cmd
+            print arm_cmd
             self._BricsCmdPublisher.publish(arm_cmd)
             rospy.sleep(1)
         self.arm_disabled=False
+        print "Done"
 
     def go_to_drop_pos(self):
         print "going to drop pos"
